@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OperacionesTest {
 
+
     @ParameterizedTest
     @CsvSource({
             "1, INSUFICIENTE"
@@ -21,5 +22,4 @@ public class OperacionesTest {
         String resultado = Operaciones.calificacion(nota);
         assertEquals (resultado ,resultadoEsperado );
     }
-}
 }
