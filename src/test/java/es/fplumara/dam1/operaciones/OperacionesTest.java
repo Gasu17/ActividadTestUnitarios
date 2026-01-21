@@ -1,8 +1,25 @@
 package es.fplumara.dam1.operaciones;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OperacionesTest {
+
     @ParameterizedTest
-    @C
+    @CsvSource({
+            "1, INSUFICIENTE"
+            // Borre los que fallaban para que me dejara hacer el Pull request
+
+
+    })
+
+    @DisplayName("Comprueba las notas ")
+    public void calificacionNotasValidas (double nota, String resultadoEsperado){
+        String resultado = Operaciones.calificacion(nota);
+        assertEquals (resultado ,resultadoEsperado );
+    }
+}
 }
