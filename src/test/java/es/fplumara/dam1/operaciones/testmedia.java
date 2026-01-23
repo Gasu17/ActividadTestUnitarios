@@ -1,10 +1,12 @@
 package es.fplumara.dam1.operaciones;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Nested;
 
 import java.util.stream.Stream;
 
@@ -14,6 +16,7 @@ public class testmedia {
 
 
     // PARAMETRIZADO - assertEquals
+    @DisplayName("TestParametrizado")
     @ParameterizedTest
     @MethodSource("notas")
     void testMedia (double[] notas , Double resultado){
@@ -22,6 +25,7 @@ public class testmedia {
     }
 
     //assertAll
+    @DisplayName("Test usandro assertAll")
     @Test
     void testmediaassertall (){
     assertAll (
@@ -33,6 +37,8 @@ public class testmedia {
 
 
     // asserThrows
+    @Nested
+    @DisplayName("Test de errores")
     @Test
     void mediaSinArgumento (){
         assertThrows(IllegalArgumentException.class,
